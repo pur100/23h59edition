@@ -30,6 +30,19 @@
             .Header__LogoLink .Heading {
                color: {{ tag | replace: 'logo-', '' }} !important;
             }
+            .Heading, .Link {
+               color: {{ tag | replace: 'logo-', '' }} !important;
+            }
+
+            .Header__Wrapper svg {
+               color: {{ tag | replace: 'logo-', '' }} !important;
+            }
+
+            .logo_txt h1{
+               color: {{ tag | replace: 'logo-', '' }} !important;
+            }
+
+
           </style>
     {% endif %}
   {% endfor %}
@@ -257,7 +270,11 @@
     <div class="Product__InfoWrapper">
       <div class="Product__Info {% if image_count == 0 %}Product__Info--noGallery{% endif %}">
         <div class="Container">
+
+
           {%- render 'product-meta', product: product, show_description: true -%}
+
+
 
           {%- if product.template_suffix != 'coming-soon' -%}
             {%- render 'product-form', product: product -%}
@@ -292,6 +309,7 @@
               {%- endif -%}
             </div>
           {%- endif -%}
+
 
           {%- if section.settings.stack_images and product_aside != blank and image_count > 0 -%}
             <div class="Product__QuickNav hidden-pocket">
@@ -432,6 +450,12 @@ This is the root container for the zoom functionality. Must not be removed, as o
     </div>
   </div>
 {%- endif -%}
+
+{% for tag in product.tags %}
+  {% if tag contains "insta" %}
+           {{ tag | replace: 'insta-', '' }};
+  {%- endif -%}
+{% endfor %}
 
 {% schema %}
 {

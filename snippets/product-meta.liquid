@@ -46,6 +46,8 @@
         {{ product.description | replace: 'data-section-type', 'data-section-type-placeholder' }}
       </div>
 
+      <div class="anchor_desc"><a href="#product_description">Plus d'informations +</a></div>
+
       {%- if section.settings.show_share_buttons -%}
         <div class="ProductMeta__ShareButtons hidden-pocket">
           <span class="ProductMeta__ShareTitle Heading Text--subdued u-h7">{{ 'product.form.share' | t }}</span>

@@ -4,19 +4,44 @@
     background-color: #e1d5ce;
   }
 
+  @font-face {
+   font-family: "Aperçu Bold";
+   src: url("https://cdn.shopify.com/s/files/1/0272/5412/8693/files/Apercu-Bold.otf?549") format("otf");
+  }
+
+  .SectionHeader__SubHeading+.SectionHeader__Heading {
+    margin-top: 0px !important;
+  }
+
+  .Slideshow__Content {
+    .SectionHeader {
+      margin-bottom: 156px;
+    }
+  }
+
 // HEADER //
+
+  .Header__LogoLink {
+    font-family: "Aperçu Bold" !important;
+    letter-spacing: 3px;
+  }
 
   .gif_logo {
     position: absolute;
     width: 200px;
-    top: 10px;
+    top: 7px;
     left: 10px;
     display: flex;
     justify-content: space-between;
-    width: 250px;
+    width: 194px;
 
     .gif img {
       height: 50px;
+    }
+
+    .logo_txt {
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -24,13 +49,48 @@
     position: relative;
   }
 
+  #shopify-section-collection-template {
+    margin-top: 140px;
+  }
 
+  .anchor_desc {
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
 
+// Insta
+
+.eapps-instagram-feed-posts-item-media {
+  background-color: pink;
+  img {
+    margin: 0px !important;
+  }
+}
+
+// articles
+
+.featured_blog {
+  width: 66%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.Article__ImageWrapper{
+  height: 450px !important;
+}
 
 // MOODBOARD //
 
+  .subheading {
+    text-align: center;
+    margin-top: -25px;
+    margin-bottom: 25px;
+  }
+
   #shopify-section-custom_moodboard {
-    margin-top: 200px;
+    margin-top: 50px;
 
     .mood_container {
       display: flex;
@@ -39,28 +99,56 @@
       justify-content: space-around;
     }
 
+    .mood_row_1 {
+      height: 66%;
+    }
+
+    .mood_row_2 {
+      height: 34%;
+    }
+
     .mood_row_1, .mood_row_2 {
       display:flex;
       justify-content: space-between;
-      width: 90%;
+      width: 80%;
     }
 
     .image_a, .image_c {
-      width: 250px;
-      height: 500px;
+      width: 20%;
+      height: 22vw;
       margin: 5px;
+      object-fit: cover;
     }
 
     .image_b {
-      height: 500px;
-      width: 750px;
+      height: 22vw;
+      width: 60%;
       margin: 5px;
+      object-fit: cover;
     }
 
     .image_e, .image_d {
-      height: 300px;
-      width: 625px;
+      height: 14vw;
+      width: 50%;
       margin: 5px;
+      object-fit: cover;
+    }
+  }
+
+
+  @media (max-width: 1290px) {
+    .gif_logo {
+      display: none;
+    }
+
+
+  }
+
+  @media (max-width: 700px) {
+    .Slideshow__Content {
+      .SectionHeader {
+        display:none;
+      }
     }
   }
 

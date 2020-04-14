@@ -35,6 +35,7 @@
                   <th>{{ 'customer.orders.payment_status' | t }}</th>
                   <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
                   <th class="Text--alignRight">{{ 'customer.orders.total' | t }}</th>
+                  <th>Vous avez besoin d'une facture ?</th>
                 </tr>
               </thead>
 
@@ -46,7 +47,8 @@
                     <td>{{ order.financial_status_label }}</td>
                     <td>{{ order.fulfillment_status_label }}</td>
                     <td class="Text--alignRight">{{ order.total_price | money_without_trailing_zeros }}</td>
-                  </tr>
+                  <td><a target='_blank' href='https://www.23heures59editions.com/apps/download-pdf/orders/35e7934f34f968ba8c28/{{ order.id | times: 4010 }}/{{ order.name | handleize }}.pdf'>Téléchargez le PDF</a></td>
+                </tr>
                 {%- endfor -%}
               </tbody>
             </table>

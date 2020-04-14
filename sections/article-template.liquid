@@ -189,6 +189,111 @@
     {%- endif -%}
   </div>
 
+  <!-- {% assign product_handle = '' %}
+  {%- for tag in article.tags -%}
+    {% if tag contains 'product' %}
+      {%- assign product_handle = tag | split: 'product- ' | last -%}
+      {%- break -%}
+    {% endif %}
+  {%- endfor -%}
+
+    <div class="Container"  style="margin-bottom: 30px;">
+      <div class="FeaturedProduct">
+        {%- if product != empty -%}
+          {%- comment -%}
+          --------------------------------------------------------------------------------------------------------------------
+          PRODUCT GALLERY
+          --------------------------------------------------------------------------------------------------------------------
+          {%- endcomment -%}
+
+          {%- if all_products[product_handle].images.size > 0 -%}
+            <a href="{{ product.url }}" class="FeaturedProduct__Gallery">
+              {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,600,700,800,900,1000', image: all_products[product_handle].featured_image -%}{%- endcapture -%}
+
+              <div class="AspectRatio" style="max-width: {{ all_products[product_handle].featured_image.width }}px; --aspect-ratio: {{ all_products[product_handle].featured_image.aspect_ratio }}">
+                {% assign image_url = all_products[product_handle].featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+
+                <img class="Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ product.featured_image.alt | escape }}">
+                <span class="Image__Loader"></span>
+
+                <noscript>
+                  <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.featured_image.alt | escape }}">
+                </noscript>
+              </div>
+            </a>
+          {%- endif -%}
+
+          <div class="FeaturedProduct__Info">
+            {%- render 'product-meta', product: all_products[product_handle], show_description: true -%}
+
+            {%- if all_products[product_handle].template_suffix != 'coming-soon' -%}
+              {%- render 'product-form', product: all_products[product_handle] -%}
+            {%- endif -%}
+
+              <div class="ProductMeta__Description Rte">
+                {%- comment -%}
+                We have figured out that some merchants were copy-pasting huge chunk of code into the product description,
+                which can make the theme crashes if it contains some special attributes used by the theme. We therefore make sure to process this
+                {%- endcomment -%}
+
+                {{ all_products[product_handle].description | replace: 'data-section-type', 'data-section-type-placeholder' }}
+              </div>
+
+            <div class="FeaturedProduct__ViewWrapper">
+              <a href="{{ product.url }}" class="Link Link--underline">{{ 'home_page.featured_product.view_product' | t }}</a>
+            </div>
+          </div>
+        {%- else -%}
+          {%- comment -%}
+          --------------------------------------------------------------------------------------------------------------------
+          PLACEHOLDER WHEN NO PRODUCT IS SELECTED
+          --------------------------------------------------------------------------------------------------------------------
+          {%- endcomment -%}
+
+          <div class="FeaturedProduct__Gallery">
+            {{- 'product-1' | placeholder_svg_tag -}}
+          </div>
+
+          <div class="FeaturedProduct__Info">
+            <div class="ProductMeta">
+
+              <h1 class="ProductMeta__Title Heading u-h2">{{ 'home_page.onboarding.product_title' | t }}</h1>
+
+              <div class="ProductMeta__PriceList Heading">
+                <span class="ProductMeta__Price Price Text--subdued u-h4" data-money-convertible>{{ 4500 | money_without_trailing_zeros }}</span>
+              </div>
+
+            </div>
+
+            <div class="ProductForm">
+
+
+              <button type="button" class="ProductForm__AddToCart Button Button--primary Button--full">
+                <span>{{ 'product.form.add_to_cart' | t }}</span>
+
+                  <span class="Button__SeparatorDot"></span>
+                  <span data-money-convertible>{{ 4500 | money_without_trailing_zeros }}</span>
+              </button>
+            </div>
+
+              <div class="ProductMeta__Description Rte">
+                {{ 'home_page.onboarding.product_description' | t }}
+              </div>
+
+            <div class="FeaturedProduct__ViewWrapper">
+              <a href="#" class="Link Link--underline">{{ 'home_page.featured_product.view_product' | t }}</a>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div> -->
+
+    {%- comment -%}
+    --------------------------------------------------------------------------------------------------------------------
+    OFF SCREEN ELEMENTS
+    --------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+
   {%- if blog.next_article or blog.previous_article -%}
     <aside class="ArticleNav">
       <div class="Container Container--narrow">
@@ -217,6 +322,10 @@
     </aside>
   {%- endif -%}
 </article>
+
+
+
+
 
 {% schema %}
 {

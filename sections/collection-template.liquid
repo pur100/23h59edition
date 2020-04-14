@@ -21,6 +21,7 @@
 
   {%- if collection.products_count > 0 -%}
     {%- paginate collection.products by section.settings.grid_items_per_page -%}
+    <h1>{{collection.handle}}</h1>
       <div class="ProductListWrapper">
         <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
           {%- for product in collection.products -%}
@@ -50,6 +51,7 @@
   --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
 
+
   {{- collection_inner -}}
 
 {%- else -%}
@@ -58,6 +60,8 @@
   CONTENT FOR NORMAL TEMPLATE
   --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
+
+
 
   {%- assign active_tags = '' -%}
 
@@ -85,6 +89,8 @@
     COLLECTION INFO
     --------------------------------------------------------------------------------------------------------------------
     {%- endcomment -%}
+
+
 
     {%- if section.settings.show_collection_info and collection.all_products_count > 0 -%}
       {%- if section.settings.show_collection_image and collection.image and collection.template_suffix != 'no-image' -%}
@@ -436,6 +442,15 @@
   "name": "Collection page",
   "class": "shopify-section--bordered",
   "settings": [
+    {
+      "type": "range",
+      "id": "margin",
+      "label": "Top margin",
+      "default": 0,
+      "min": 0,
+      "max": 200,
+      "step" : 5
+    },
     {
       "type": "checkbox",
       "id": "show_collection_info",

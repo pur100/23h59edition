@@ -1,30 +1,30 @@
 {
   "current": {
-    "heading_color": "#454545",
-    "text_color": "#454545",
-    "text_light_color": "#9d9d9d",
-    "link_color": "#a17c5e",
+    "heading_color": "#1a1e51",
+    "text_color": "#1a1e51",
+    "text_light_color": "#ab3d17",
+    "link_color": "#bc4028",
     "background": "#e0d6ce",
-    "light_background": "#ffffff",
+    "light_background": "#e3d0c2",
     "product_on_sale_color": "#f94c43",
-    "button_background": "#c2a284",
+    "button_background": "#1a1e51",
     "button_text_color": "#ffffff",
     "header_background": "#e0d6ce",
-    "header_heading_color": "#454545",
-    "header_light_color": "#9d9d9d",
-    "footer_background": "#fef4ed",
-    "footer_heading_color": "#454545",
-    "footer_text_color": "#9d9d9d",
+    "header_heading_color": "#1a1e51",
+    "header_light_color": "#b94f4f",
+    "footer_background": "#b7aca9",
+    "footer_heading_color": "#1a1e51",
+    "footer_text_color": "#1a1e51",
     "navigation_background": "#fef4ed",
     "navigation_text_color": "#1a1e51",
     "newsletter_popup_background": "#454545",
     "newsletter_popup_text_color": "#ffffff",
     "secondary_elements_background": "#f1e4d8",
-    "secondary_elements_text_color": "#373737",
+    "secondary_elements_text_color": "#1a1e51",
     "heading_font": "din_neuzeit_grotesk_n7",
-    "heading_size": "normal",
-    "uppercase_heading": true,
-    "text_font": "futura_n4",
+    "heading_size": "small",
+    "uppercase_heading": false,
+    "text_font": "century_gothic_n4",
     "base_text_font_size": 14,
     "currency_conversion_enabled": false,
     "currency_conversion_round_amounts": true,
@@ -35,17 +35,17 @@
     "show_image_zooming": true,
     "show_element_staggering": false,
     "search_mode": "product,article",
-    "product_show_price_on_hover": true,
-    "product_show_secondary_image": false,
-    "product_info_alignment": "left",
+    "product_show_price_on_hover": false,
+    "product_show_secondary_image": true,
+    "product_info_alignment": "center",
     "product_image_size": "square",
-    "product_list_horizontal_spacing": "medium",
+    "product_list_horizontal_spacing": "small",
     "product_list_vertical_spacing": "small",
     "cart_type": "drawer",
     "cart_enable_notes": true,
-    "cart_show_free_shipping_threshold": false,
-    "cart_free_shipping_threshold": "50",
-    "share_image": "",
+    "cart_show_free_shipping_threshold": true,
+    "cart_free_shipping_threshold": "70",
+    "share_image": "shopify:\/\/shop_images\/studioquotidien-23h59editions--37.jpg",
     "social_facebook": "",
     "social_twitter": "",
     "social_pinterest": "",
@@ -58,7 +58,7 @@
     "social_fancy": "",
     "favicon": "shopify:\/\/shop_images\/apple-icon-72x72.png",
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo_anim_300.gif",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -69,7 +69,7 @@
     "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     "checkout_accent_color": "#a17c5e",
-    "checkout_button_color": "#454545",
+    "checkout_button_color": "#191e51",
     "checkout_error_color": "#e32c2b",
     "sections": {
       "sidebar-menu": {
@@ -84,10 +84,10 @@
         "type": "announcement",
         "settings": {
           "enable_bar": true,
-          "home_page_only": false,
+          "home_page_only": true,
           "background": "#1a1d51",
           "text_color": "#f1e4d8",
-          "content": "Announce something here",
+          "content": "Les frais de livraison sont offerts à partir de 70 euros d'achat, profitez-en !",
           "link": ""
         }
       },
@@ -114,8 +114,8 @@
         ],
         "settings": {
           "use_sticky_header": true,
-          "logo": "shopify:\/\/shop_images\/25heures59editions-logo_c3a7d25c-486c-431a-9598-062ee87c03ec.png",
-          "logo_max_width": 280,
+          "logo": "",
+          "logo_max_width": 305,
           "mobile_logo_max_width": 165,
           "navigation_menu": "main-menu",
           "navigation_style": "center",
@@ -123,7 +123,7 @@
           "enable_transparent_header": true,
           "enable_transparent_header_collection": true,
           "show_transparent_header_border": true,
-          "transparent_text_color": "#ffffff",
+          "transparent_text_color": "#1a1e51",
           "transparent_logo": ""
         }
       },
@@ -133,8 +133,8 @@
           "footer-0": {
             "type": "text",
             "settings": {
-              "title": "About the shop",
-              "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme settings.<\/p>",
+              "title": "A propos",
+              "content": "<p>Nous faisons plus que des carnets ! Nous concevons des compagnons de route pour vous aider &agrave; cr&eacute;er votre entreprise, g&eacute;rer votre temps et planifier vos r&ecirc;ves.<\/p>",
               "show_social_media": true
             }
           },
@@ -148,7 +148,7 @@
             "type": "newsletter",
             "settings": {
               "title": "Newsletter",
-              "content": "<p>Subscribe to receive updates, access to exclusive deals, and more.<\/p>"
+              "content": "<p>N'h&eacute;sitez pas &agrave; vous inscrire pour recevoir des offres en avant-premi&egrave;re et profiter de conseils pour acc&eacute;der &agrave; vos r&ecirc;ves les plus fous.<\/p>"
             }
           }
         },
@@ -167,14 +167,14 @@
           "slide-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/studioquotidien-23h59editions-1800-1200.jpg",
-              "mobile_image": "",
+              "image": "shopify:\/\/shop_images\/studioquotidien-23h59editions--43-2.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/studioquotidien-23h59editions--37.jpg",
               "apply_overlay": false,
               "content_position": "bottomLeft",
-              "subheading": "NOUS FAISONS",
-              "title": "BIEN PLUS QUE DES CARNETS",
-              "button_1_text": "En savoir plus",
-              "button_1_link": "",
+              "subheading": "NOUS FAISONS BIEN PLUS QUE",
+              "title": "DES CARNETS",
+              "button_1_text": "Découvrir",
+              "button_1_link": "shopify:\/\/collections",
               "button_2_text": "",
               "button_2_link": ""
             }
@@ -184,23 +184,24 @@
           "slide-0"
         ],
         "settings": {
-          "show_fullscreen": true,
+          "show_fullscreen": false,
           "show_arrow": false,
           "autoplay": true,
           "cycle_speed": 3,
-          "text_color": "#ffffff",
-          "button_color": "#f1e4d8",
-          "button_background": "#ffffff"
+          "text_color": "#1a1e51",
+          "button_color": "#fef4ed",
+          "button_background": "#1a1e51"
         }
       },
       "featured-collections": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "featured-collection-0": {
             "type": "collection",
             "settings": {
-              "collection": "nos-autres-produits",
-              "title": "",
+              "collection": "accessoires-de-bureau",
+              "title": "PLANNERS & AUTRES ACCESSOIRES",
               "grid_items_count": 8,
               "button_text": "View all products"
             }
@@ -210,7 +211,7 @@
           "featured-collection-0"
         ],
         "settings": {
-          "title": "NOS AUTRES PRODUITS",
+          "title": "SUR VOTRE BUREAU",
           "layout_mode": "grid",
           "show_product_info": true,
           "show_vendor": false,
@@ -226,8 +227,8 @@
           "collection-0": {
             "type": "collection",
             "settings": {
-              "collection": "",
-              "image": "",
+              "collection": "shop",
+              "image": "shopify:\/\/shop_images\/avis-Valerie_1.png",
               "image_alignment": "center center",
               "content_position": "bottomLeft",
               "subheading": "Sub-heading",
@@ -284,13 +285,13 @@
         "type": "featured-product",
         "settings": {
           "subheading": "",
-          "title": "nouveau",
+          "title": "NOUVEAUTES",
           "show_headings_on_mobile": true,
-          "product": "carnet-du-temps",
-          "show_vendor": true,
+          "product": "pack-changer-de-vie",
+          "show_vendor": false,
           "show_sku": false,
-          "show_description": true,
-          "description_below_add_to_cart": false,
+          "show_description": false,
+          "description_below_add_to_cart": true,
           "selector_mode": "dropdown",
           "show_color_swatch": false,
           "show_color_carousel": false,
@@ -315,11 +316,11 @@
           "blog-0"
         ],
         "settings": {
-          "subheading": "",
-          "title": "JOURNAL",
+          "subheading": "JOURNAL",
+          "title": "Inspirations et Méthodes",
           "show_category": true,
           "button_link": "",
-          "button_text": "View all articles"
+          "button_text": "Voir les articles"
         }
       },
       "shop-the-look": {
@@ -331,12 +332,12 @@
               "image": "shopify:\/\/shop_images\/studioquotidien-23h59editions--16.jpg",
               "dot_style": "light",
               "product_1": "carnet-pour-entreprendre",
-              "product_1_horizontal_position": 29,
+              "product_1_horizontal_position": 19,
               "product_1_vertical_position": 41,
-              "product_2": "test-1",
+              "product_2": "carnet-du-temps",
               "product_2_horizontal_position": 45,
               "product_2_vertical_position": 65,
-              "product_3": "test-1",
+              "product_3": "carnet-de-projets",
               "product_3_horizontal_position": 70,
               "product_3_vertical_position": 50
             }
@@ -346,12 +347,12 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/studioquotidien-23h59editions--27.jpg",
               "dot_style": "light",
-              "product_1": "sous-main-planifiez-vos-reves",
+              "product_1": "sous-main-de-bureau",
               "product_1_horizontal_position": 25,
-              "product_1_vertical_position": 45,
-              "product_2": "",
-              "product_2_horizontal_position": 55,
-              "product_2_vertical_position": 30,
+              "product_1_vertical_position": 58,
+              "product_2": "stylo-plume-kaweco",
+              "product_2_horizontal_position": 76,
+              "product_2_vertical_position": 15,
               "product_3": "",
               "product_3_horizontal_position": 65,
               "product_3_vertical_position": 60
@@ -363,14 +364,15 @@
           "look-1"
         ],
         "settings": {
-          "subheading": "inspiration",
-          "title": "NOS CARNETS",
+          "subheading": "",
+          "title": "AUSSI BEAUX, QU'INTELLIGENTS",
           "show_mobile_product_info": false
         }
       },
       "collection-template": {
         "type": "collection-template",
         "settings": {
+          "margin": 0,
           "show_collection_info": true,
           "show_collection_image": false,
           "apply_overlay": true,
@@ -392,7 +394,7 @@
       "recently-viewed-products": {
         "type": "recently-viewed-products",
         "settings": {
-          "show_section": true,
+          "show_section": false,
           "title": "Recently viewed",
           "show_product_info": true,
           "show_vendor": false,
@@ -414,13 +416,13 @@
         "type": "product-template",
         "settings": {
           "show_share_buttons": true,
-          "show_vendor": true,
+          "show_vendor": false,
           "show_sku": false,
-          "description_below_add_to_cart": true,
-          "selector_mode": "dropdown",
+          "description_below_add_to_cart": false,
+          "selector_mode": "block",
           "show_color_swatch": false,
           "show_color_carousel": false,
-          "show_quantity_selector": true,
+          "show_quantity_selector": false,
           "show_inventory_quantity": false,
           "inventory_quantity_threshold": 3,
           "show_price_in_button": false,
@@ -432,14 +434,14 @@
           "tab_page_1_handle": "",
           "tab_page_2_handle": "",
           "reviews_enabled": false,
-          "featured_image_size": "normal"
+          "featured_image_size": "small"
         }
       },
       "product-recommendations": {
         "type": "product-recommendations",
         "settings": {
           "show_product_recommendations": true,
-          "heading": "You may also like",
+          "heading": "Vous devriez jeter un oeil !",
           "show_product_info": true,
           "show_vendor": false,
           "show_color_swatch": false
@@ -453,7 +455,7 @@
           "show_only_for_visitors": true,
           "show_only_once": true,
           "title": "Popup",
-          "content": "<p>You can use this popup to display some useful information to your customers.<\/p>",
+          "content": "<p>Les frais de livraison sont offerts &agrave; partir de 70 euros, profitez-en !<\/p>",
           "show_newsletter": true,
           "apparition_delay": 5
         }
@@ -462,9 +464,9 @@
         "type": "blog-template",
         "settings": {
           "show_rss": false,
-          "show_tags": false,
+          "show_tags": true,
           "show_featured_article": false,
-          "show_category": false
+          "show_category": true
         }
       },
       "shop-now": {
@@ -491,40 +493,72 @@
       },
       "list-collections-template": {
         "type": "list-collections-template",
+        "blocks": {
+          "1580306816794": {
+            "type": "collection",
+            "settings": {
+              "collection": "carnets-de-methodologies",
+              "image": "",
+              "image_alignment": "center center",
+              "content_position": "bottomLeft",
+              "subheading": "Sub-heading",
+              "title": "Heading",
+              "button_text": "View products"
+            }
+          },
+          "1580306658414": {
+            "type": "collection",
+            "settings": {
+              "collection": "accessoires-de-bureau",
+              "image": "",
+              "image_alignment": "center center",
+              "content_position": "bottomCenter",
+              "subheading": "Sub-heading",
+              "title": "Heading",
+              "button_text": "View products"
+            }
+          },
+          "1580306764231": {
+            "type": "collection",
+            "settings": {
+              "collection": "agendas-planners",
+              "image": "",
+              "image_alignment": "center center",
+              "content_position": "bottomLeft",
+              "subheading": "Sub-heading",
+              "title": "Heading",
+              "button_text": "View products"
+            }
+          }
+        },
+        "block_order": [
+          "1580306816794",
+          "1580306658414",
+          "1580306764231"
+        ],
         "settings": {
-          "collections_to_show": "all",
-          "image_size": "normal",
+          "subheading": "Nous créeons tout un univers de carnets de méthodes et d'accessoires de bureaux aussi beaux qu'intelligents pour vous inspirer et vous dépasser.",
+          "collections_to_show": "selected",
+          "image_size": "small",
           "add_spacing": true,
           "expand_collection": false,
-          "apply_overlay": true,
-          "text_color": "#ffffff",
-          "button_color": "#363636"
+          "apply_overlay": false,
+          "text_color": "#fef4ed",
+          "button_color": "#ab3d17"
         }
       },
       "cart-template": {
         "type": "cart-template",
         "settings": {
           "show_shipping_estimator": true,
-          "shipping_estimator_default_country": "United States"
-        }
-      },
-      "1572275280813": {
-        "type": "text-with-image",
-        "settings": {
-          "subheading": "TEST",
-          "title": "Quel est votre carnet idéal ?",
-          "image": "",
-          "image_position": "right",
-          "content": "<p>m ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem<\/p>",
-          "link_text": "Faire le test",
-          "link_url": "shopify:\/\/pages\/quel-carnet-est-fait-pour-moi"
+          "shipping_estimator_default_country": "France"
         }
       },
       "1572279597712": {
         "type": "instagram-feed",
         "settings": {
           "subheading": "@23heures59editions",
-          "title": "Follow us",
+          "title": "Suivez-nous sur Instagram",
           "access_token": "3627685112.6a7999e.da42a131344b48e58a661f9276e9d1bc",
           "image_count": 20,
           "button_text": "",
@@ -535,59 +569,260 @@
         "type": "timeline",
         "disabled": true,
         "blocks": {
-          "1572435510268-1": {
-            "type": "item",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/testimoniaux2-CPE-1200.png",
-              "apply_overlay": true,
-              "title": "AVIS",
-              "subheading": "Sub-heading",
-              "heading": "Heading",
-              "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
-            }
-          },
           "1572435510268-0": {
             "type": "item",
             "settings": {
               "image": "shopify:\/\/shop_images\/annesolange_2.png",
               "apply_overlay": true,
-              "title": "Portraits",
-              "subheading": "Ambassadrices",
+              "title": "LEURS CARNETS",
+              "subheading": "Leurs projets, leurs carnets...",
               "heading": "Anne-Solange Tardy",
-              "content": "<p><a href=\"\/blogs\/news\/comment-anne-solange-tardy-organise-son-temps\" title=\"Comment Anne-Solange Tardy organise son temps ?\">Add your own custom content to give more information about your store, availability details...<\/a><\/p>\n<p><\/p>"
+              "content": "<p>D&eacute;couvrez&nbsp;comment Anne Solange Tardy organise son temps.<\/p>\n<p><\/p>"
             }
           },
           "1572435510268-2": {
             "type": "item",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/Carnet-pour-entreprendre-methodes-2.jpg",
               "apply_overlay": true,
-              "title": "2002",
+              "title": "PERSONALISATION",
               "subheading": "Sub-heading",
               "heading": "Heading",
-              "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+              "content": "<p>&nbsp;Vous &ecirc;tes une marque ou une entreprise et vous souhaitez collaborer avec nous et co-cr&eacute;er le carnet id&eacute;al. <a href=\"\/pages\/nos-collaborations\" title=\"Carnets personnalis&eacute;s\">D&eacute;couvrez nos r&eacute;alisations.<\/a><\/p>"
+            }
+          },
+          "1580845520968": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Anne-Carnet-du_temps-1.jpg",
+              "apply_overlay": true,
+              "title": "NOTRE HISTOIRE",
+              "subheading": "23heures59editions...",
+              "heading": "C'est l'histoire d'un beau projet",
+              "content": "<p>23heures59editions, c'est l'histoire d'un changement de vie, de nouveaux projets et d'une aventure qui n'en finit pas d'&ecirc;tre surprenante.<\/p>\n<p><a href=\"\/pages\/la-petite-histoire\" title=\"La petite histoire\">En savoir plus sur 23heures59<\/a><\/p>"
             }
           }
         },
         "block_order": [
-          "1572435510268-1",
           "1572435510268-0",
-          "1572435510268-2"
+          "1572435510268-2",
+          "1580845520968"
         ],
         "settings": {
-          "text_color": "#ffffff"
+          "text_color": "#1a1e51"
         }
       },
       "1578334786064": {
         "type": "text-with-image",
         "settings": {
-          "subheading": "MANIFESTO",
-          "title": "Ecrire son futur",
+          "subheading": "",
+          "title": "VOUS AVEZ UN PROJET ?",
           "image": "",
           "image_position": "left",
-          "content": "<p>&Agrave; l&rsquo;heure du tout digital, prendre un papier et un crayon pour poser ses id&eacute;es n&rsquo;a jamais &eacute;t&eacute; aussi n&eacute;cessaire. Pourtant, ce n&rsquo;est pas suffisant, quand on d&eacute;sire concr&eacute;tiser ses projets. Loin de l&agrave;. De quoi manquons-pour y arriver ? De motivation? De temps ? D&rsquo;ambition ? Rien de tout cela. Nous manquons simplement de m&eacute;thode.<\/p>\n<p><\/p>",
+          "content": "<p><strong>Asseyez-vous et commencez &agrave; &eacute;crire votre futur<\/strong>.<\/p>\n<p>&Agrave; l&rsquo;heure du tout digital, prendre un papier et un crayon pour poser ses id&eacute;es n&rsquo;a jamais &eacute;t&eacute; aussi n&eacute;cessaire. Pourtant, ce n&rsquo;est pas suffisant, quand on d&eacute;sire concr&eacute;tiser ses projets. Loin de l&agrave;. De quoi manquons-pour y arriver ? De motivation? De temps ? D&rsquo;ambition ? Rien de tout cela. Nous manquons simplement de m&eacute;thode.&nbsp;<\/p>\n<p><a href=\"\/pages\/manifesto\" title=\"Manifesto | 23 heures 59 &eacute;ditions\"><strong>D&eacute;couvrez&nbsp;notre manifesto<\/strong><\/a><\/p>\n<p><\/p>",
           "link_text": "",
-          "link_url": ""
+          "link_url": "shopify:\/\/pages\/quel-carnet-est-fait-pour-moi"
+        }
+      },
+      "tesimonials_bis": {
+        "type": "tesimonials_bis",
+        "blocks": {
+          "1579792619162": {
+            "type": "testimonial",
+            "settings": {
+              "logo": "",
+              "quote": "<p>&ldquo;Cette m&eacute;thode, c&rsquo;est un kit de process &eacute;prouv&eacute;s qui rend notre id&eacute;e possible ! et &ccedil;a &ccedil;a rassure et &ccedil;a motive l&agrave; o&ugrave; le climat ambiant et les contraintes risquent de d&eacute;motiver!&rdquo;&nbsp;<\/p>\n<p>Philippe Darchis -KAYOSHI<\/p>"
+            }
+          },
+          "1579792631656": {
+            "type": "testimonial",
+            "settings": {
+              "logo": "",
+              "quote": "<p>Le carnet pour entreprendre guide ma pens&eacute;e et m'emp&ecirc;che de trop pr&eacute;cipiter les choses.&nbsp;<\/p>\n<p>Vaike Hushan - Photographe<\/p>"
+            }
+          },
+          "1579792635098": {
+            "type": "testimonial",
+            "settings": {
+              "logo": "",
+              "quote": "<p>Plus qu' une m&eacute;thode, un alli&eacute; pour se lancer en 6 mois ! Marjorie Pouzadoux Bokobza - Brand strategiste<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1579792619162",
+          "1579792631656",
+          "1579792635098"
+        ],
+        "settings": {
+          "autoplay": true,
+          "cycle_speed": 5,
+          "background": "#c9cfd3",
+          "text_color": "#1a1d51"
+        }
+      },
+      "custom_moodboard": {
+        "type": "custom_moodboard",
+        "settings": {
+          "image_a": "https:\/\/cdn.shopify.com\/s\/files\/1\/0272\/5412\/8693\/files\/feuille-papier.png?v=1580242387",
+          "link_a": "shopify:\/\/products\/test-1",
+          "image_b": "https:\/\/cdn.shopify.com\/s\/files\/1\/0272\/5412\/8693\/files\/carnet-talons.mov?568",
+          "link_b": "shopify:\/\/products\/carnet-de-projets",
+          "image_c": "https:\/\/cdn.shopify.com\/s\/files\/1\/0272\/5412\/8693\/files\/CDP-moodboard.jpg?v=1582021074",
+          "link_c": "shopify:\/\/products\/carnet-de-projets",
+          "image_d": "https:\/\/cdn.shopify.com\/s\/files\/1\/0272\/5412\/8693\/files\/feuille-papier.png?v=1580242387",
+          "link_d": "",
+          "image_e": "https:\/\/cdn.shopify.com\/s\/files\/1\/0272\/5412\/8693\/files\/feuille-papier.png?v=1580242387",
+          "link_e": ""
+        }
+      },
+      "1580845198600": {
+        "type": "testimonials",
+        "disabled": true,
+        "blocks": {
+          "1580845198600-0": {
+            "type": "testimonial",
+            "settings": {
+              "logo": "",
+              "quote": "<p>Jamais je n'aurais pens&eacute; aller aussi loin dans mes projets.<\/p>\n<p><a href=\"\/blogs\/news\/le-carnet-de-projets-de-pouic\" title=\"Le carnet de projets de Pouic\">Claire, graphiste<\/a><\/p>"
+            }
+          },
+          "1580845198600-1": {
+            "type": "testimonial",
+            "settings": {
+              "logo": "",
+              "quote": "<p>Share what your customers are saying about your products, your company...<\/p>"
+            }
+          },
+          "1580845198600-2": {
+            "type": "testimonial",
+            "settings": {
+              "logo": "",
+              "quote": "<p>Share what your customers are saying about your products, your company...<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1580845198600-0",
+          "1580845198600-1",
+          "1580845198600-2"
+        ],
+        "settings": {
+          "autoplay": true,
+          "cycle_speed": 5,
+          "background": "#1a1e51",
+          "text_color": "#fef4ed"
+        }
+      },
+      "page-faq-template": {
+        "type": "page-faq-template",
+        "blocks": {
+          "page-faq-template-0": {
+            "type": "separator",
+            "settings": {
+              "title": "Livraison"
+            }
+          },
+          "page-faq-template-1": {
+            "type": "question",
+            "settings": {
+              "title": "Livrez-vous partout ?",
+              "answer": "<p>&nbsp;Oui, nous pouvons livrer nos produits partout dans le mode.&nbsp;Le prix de la livraison sera appliqu&eacute;e au moment du payement.&nbsp;Nous faisons souvent des offres de livraison gratuite que nous annon&ccedil;ons dans nos newsletters et sur les r&eacute;seaux sociaux. restons en contact !<\/p>"
+            }
+          },
+          "page-faq-template-2": {
+            "type": "question",
+            "settings": {
+              "title": "Dans combien de temps recevrais-je ma commande ?",
+              "answer": "<p>Cela d&eacute;pend de&nbsp;votre lieu de livraison. Le traitement des commandes prends environ 3 jours et l'envoi se fait en colissimo soit 2-3 jours ouvr&eacute;s. Les commandes &agrave; l'&eacute;tranger peuvent prendre entre 7-16 jours.<\/p>"
+            }
+          },
+          "page-faq-template-4": {
+            "type": "separator",
+            "settings": {
+              "title": "Commandes"
+            }
+          },
+          "page-faq-template-5": {
+            "type": "question",
+            "settings": {
+              "title": "Puis-je retourner ma commande ?",
+              "answer": "<p>Nous faisons tout pour que vous appr&eacute;ciez nos produits, mais vous avez le droit de vous tromper!&nbsp;Envoyez-nous un mail &agrave; la rubrique contact et nous vous indiquerons la marche &agrave; suivre.<\/p>"
+            }
+          },
+          "page-faq-template-7": {
+            "type": "separator",
+            "settings": {
+              "title": "Personnalisation"
+            }
+          },
+          "page-faq-template-6": {
+            "type": "question",
+            "settings": {
+              "title": "Est-ce que je peux personnaliser mon carnet ?",
+              "answer": "<p>Pour le moment, cela n'est pas possible pour un seul carnet. Par contre, si cela vous int&eacute;resse pour votre entreprise il n'y a pas de soucis &agrave; partir de 75 exemplaires. Tous les renseignements <a href=\"\/pages\/nos-collaborations\" title=\"Carnets personnalis&eacute;s\">se trouve sur cette page<\/a><\/p>"
+            }
+          },
+          "1582566434121": {
+            "type": "separator",
+            "settings": {
+              "title": "Fabrication"
+            }
+          },
+          "page-faq-template-8": {
+            "type": "question",
+            "settings": {
+              "title": "C'est normal cette couverture ?",
+              "answer": "<p>Nos carnets ont souvent des fa&ccedil;onnages tr&egrave;s particuliers. Nous avons choisi la plupart des couvertures &agrave; la Suisse, qui se remarque par un bloc d&eacute;solidaris&eacute; de la couverture. Cela vous permet un confort d'&eacute;criture sans pareil en permettant &agrave; votre carnet de tenir bien &agrave; plat.<\/p>"
+            }
+          },
+          "1582566406214": {
+            "type": "question",
+            "settings": {
+              "title": "Papier",
+              "answer": "<p>Nous g&eacute;rons toute la cha&icirc;ne de conception des produits de l'id&eacute;e jusqu'&agrave; la commercialisation.&nbsp;<br><strong>Nous sommes adeptes du \"less is more\"<\/strong>, nous adorons les objets graphiques, le papier est notre meilleur ami et nous avons &agrave; coeur de faire fabriquer en France et en Europe nos tr&egrave;s beaux carnets.&nbsp;<br>Nos papiers sont choisis pour leur confort d'&eacute;criture mais aussi car nos fournisseurs de papier travaillent avec des normes &eacute;co-responsables tr&egrave;s s&eacute;rieuses.<\/p>\n<p>Par exemple, on dit de notre carnet de projets qu'il est tellement beau que l'on ose &agrave; peine commencer &agrave; &eacute;crire dedans. !<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "page-faq-template-0",
+          "page-faq-template-1",
+          "page-faq-template-2",
+          "page-faq-template-4",
+          "page-faq-template-5",
+          "page-faq-template-7",
+          "page-faq-template-6",
+          "1582566434121",
+          "page-faq-template-8",
+          "1582566406214"
+        ],
+        "settings": {}
+      },
+      "password-template": {
+        "type": "password-template",
+        "settings": {
+          "logo": "",
+          "logo_max_width": 140,
+          "mobile_logo_max_width": 90,
+          "background_image": "",
+          "text_color": "#ffffff",
+          "heading": "Opening Soon",
+          "show_newsletter_signup": true,
+          "newsletter_text": "<p>A short sentence describing what someone will receive by subscribing<\/p>",
+          "show_social_sharing": true,
+          "social_message": "Spread the word"
+        }
+      },
+      "1582284474811": {
+        "type": "newsletter",
+        "settings": {
+          "section_size": "small",
+          "image": "",
+          "text_color": "#1a1e51",
+          "button_color": "#000000",
+          "subheading": "",
+          "title": "Rejoignez la communauté",
+          "content": "<p>Profitez<\/p>\n<p>Nous ne vous spamons pas nous n&rsquo;avons pas le temps pour &ccedil;a !<\/p>"
         }
       }
     },
@@ -595,13 +830,14 @@
       "slideshow",
       "1578334786064",
       "shop-the-look",
-      "1572275280813",
       "featured-collections",
       "collection-list",
       "featured-product",
       "1572435510268",
+      "1580845198600",
       "blog-posts",
-      "1572279597712"
+      "1572279597712",
+      "1582284474811"
     ]
   },
   "presets": {

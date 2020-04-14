@@ -66,10 +66,10 @@
 {%- endfor -%}
 
 {%- if first_page.handle != blank or second_page.handle != blank or has_unique_tab_1 or has_unique_tab_2 or has_unique_tab_3 or section.settings.reviews_enabled -%}
-  <div class="Product__Tabs">
+  <div class="Product__Tabs" id="product_description">
     {%- if has_unique_tab_1 -%}
       <div class="Collapsible Collapsible--large">
-        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+        <button  class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
           {{- unique_tab_1_title -}} <span class="Collapsible__Plus"></span>
         </button>
 
