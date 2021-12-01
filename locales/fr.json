@@ -265,7 +265,7 @@
       "save_note": "Sauvegarder",
       "note_placeholder": "Un message à nous laisser ?",
       "free_shipping": "Vous bénéficiez des frais de port gratuits !",
-      "free_shipping_remaining_html": "Encore {{remaining_amount}} pour bénéficier des frais de port gratuits !",
+      "free_shipping_remaining_html": "Encore {{remaining_amount}} pour bénéficier des frais de port gratuits en France !",
       "shipping_and_taxes_notice": "Livraison et taxes calculées à la caisse",
       "discount": "Remise",
       "total": "Total",

@@ -19,6 +19,12 @@
     }
   }
 
+// upsell
+
+#nudge-offer div:nth-child(3) {
+    display: none;
+}
+
 // HEADER //
 
   .Header__LogoLink {
@@ -49,7 +55,7 @@
     position: relative;
   }
 
-  #shopify-section-collection-template {
+  #shopify-section-collection-template, #shopify-section-collection-template-b, #shopify-section-collection-template-c, #shopify-section-collection-template-d, #shopify-section-collection-template-e {
     margin-top: 140px;
   }
 
@@ -137,18 +143,22 @@
 
 
   @media (max-width: 1290px) {
+    .Slideshow__Content h3 {
+      margin: 0;
+    }
+    .Slideshow__Content .SectionHeader {
+        margin-bottom: -50px;
+    }
     .gif_logo {
       display: none;
     }
-
-
-  }
-
-  @media (max-width: 700px) {
-    .Slideshow__Content {
-      .SectionHeader {
-        display:none;
-      }
+    //   .Button {
+    // margin-top: 8rem !important;
+    // }
+    .Slideshow__Content--middleRight .SectionHeader__Heading {
+      margin-top:8.65rem!important;
     }
+
   }
+
 

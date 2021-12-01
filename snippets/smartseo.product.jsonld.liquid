@@ -7,6 +7,15 @@
 {%- assign ratingValue = blank -%}
 {%- assign reviewCount = blank -%}
 
+{%- if productReviewsPlugin == "rivyo-review" -%}
+    {%- assign product_schema = product.metafields.product_schema -%}
+    {%- if product_schema['th_ratingCount'] > 0 -%}
+        {%- assign reviewAppDescription = '"Rivyo Review"' -%}
+        {%- assign ratingValue = product_schema['th_ratingValue'] -%}
+        {%- assign reviewCount = product_schema['th_ratingCount'] -%}
+    {%- endif -%}
+{%- endif -%}
+
 {%- if productReviewsPlugin == "shopify-product-reviews" and product.metafields.spr.reviews != blank -%}
     {%- assign ratingValueReviewArray = product.metafields.spr.reviews | split: '"ratingValue": "' -%}
     {%- assign ratingValueArr = ratingValueReviewArray[1] |split: '"' -%}
@@ -47,10 +56,58 @@
         {%- assign reviewAppDescription = '"Loox Reviews"' -%}
         {%- assign ratingValue = product.metafields.loox.avg_rating -%}
         {%- assign reviewCount = product.metafields.loox.num_reviews -%}
-{%- elsif productReviewsPlugin == "socialshopwave-reviews" and product.metafields.ssw.count_rate and product.metafields.ssw.count_rate != '0' and product.metafields.ssw.count_rate != 0 %}
-        {%- assign reviewAppDescription = '"SocialShopWave Reviews"' -%}
-        {%- assign ratingValue = product.metafields.ssw.avg_rate -%}
-        {%- assign reviewCount = product.metafields.ssw.count_rate -%}
+{%- elsif productReviewsPlugin == "socialshopwave-reviews" %}
+        {%- assign ssw_review_enabled = 1 -%}
+        {%- if shop.metafields.ssw['review_enabled'] -%}
+            {%- assign ssw_review_enabled = shop.metafields.ssw['review_enabled'] -%}
+        {%- endif -%}
+        {%- assign ssw_unite_reviews = 0 -%}
+        {%- if shop.metafields.ssw['unite_reviews'] -%}
+          {%- assign ssw_unite_reviews = shop.metafields.ssw['unite_reviews'] -%}
+        {%- endif -%}
+        {%- if ssw_review_enabled == 1 -%}
+              {%- assign ssw_count_rate = 0 -%}
+              {%- assign ssw_avg_rate = 0 -%}
+              {%- assign ssw_rate_data_key = 'review' -%}
+              {%- if ssw_unite_reviews == 1 -%}
+                {%- if shop.metafields.ssw['unite_product_ids'] -%}
+                  {%- assign ssw_unite_product_ids = shop.metafields.ssw['unite_product_ids'] | split: ',' -%}
+                  {%- assign unite_product_id = product.id | downcase -%}
+                  {%- if ssw_unite_product_ids contains unite_product_id -%}
+                    {%- assign ssw_rate_data_key = 'unite_review' -%}
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endif -%}
+              {%- if product.metafields.ssw[ssw_rate_data_key] -%}
+                {%- assign ssw_count_rate = product.metafields.ssw[ssw_rate_data_key].count | plus: 0 -%}
+                {%- assign ssw_avg_rate = product.metafields.ssw[ssw_rate_data_key].avg | plus: 0 -%}
+                {%- assign ssw_product_id = product.id -%}
+                {%- if product.metafields.ssw[ssw_rate_data_key].product_id -%}
+                  {%- assign ssw_product_id = product.metafields.ssw[ssw_rate_data_key].product_id | plus: 0 -%}
+                {%- endif -%}
+                {%- if ssw_product_id != product.id  -%}
+                  {%- assign ssw_count_rate  = 0 -%}
+                  {%- assign ssw_avg_rate = 0 -%}
+                {%- endif -%}
+              {%- endif -%}
+              {%- if ssw_avg_rate > 0 and ssw_count_rate > 0 -%}
+                  {%- assign reviewAppDescription = '"SocialShopWave Reviews"' -%}
+                  {%- assign ratingValue = ssw_avg_rate -%}
+                  {%- assign reviewCount = ssw_count_rate -%}
+              {%- endif -%}
+        {%- endif -%}
+{%- elsif productReviewsPlugin == "areviews" %}
+    {%- assign ratingValueReviewArray = product.metafields.areviews.product_reviews | split: "'ratingValue' content='" -%}
+    {%- assign ratingValueArr = ratingValueReviewArray[1] |split: "'" -%}
+    {%- assign reviewValue = ratingValueArr[0] -%}
+    {%- assign reviewsCountStrArray = product.metafields.areviews.product_reviews | split: "'ratingCount' content='" -%}
+    {%- assign reviewsCountArr = reviewsCountStrArray[1] | split: "'" -%}
+    {%- assign reviewsCount = reviewsCountArr[0] -%}
+    {%- unless reviewsCount == blank -%}
+        {%- assign reviewAppDescription = '"Areviews"' -%}
+        {%- assign ratingValue = reviewValue -%}
+        {%- assign reviewCount = reviewsCount -%}
+    {%- endunless -%}
 {%- elsif productReviewsPlugin == "trust-reviews" and product.metafields.vnreviews.reviewCount and product.metafields.vnreviews.reviewCount != '0' and product.metafields.vnreviews.reviewCount != 0 %}
         {%- assign reviewAppDescription = '"Trust Reviews"' -%}
         {%- assign ratingValue = product.metafields.vnreviews.ratingValue -%}

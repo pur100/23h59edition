@@ -3,7 +3,7 @@
     "name": "theme_info",
     "theme_name": "Prestige",
     "theme_author": "Maestrooo",
-    "theme_version": "4.5.1",
+    "theme_version": "4.14.1",
     "theme_documentation_url": "http:\/\/support.maestrooo.com\/",
     "theme_support_url": "https:\/\/support.maestrooo.com\/article\/203-contact-us"
   },
@@ -229,57 +229,13 @@
     ]
   },
   {
-    "name": "Currency conversion",
-    "settings": [
-      {
-        "type": "paragraph",
-        "content": "If native multi-currencies is configured on your store, the theme currency converter will be disabled."
-      },
-      {
-        "type": "checkbox",
-        "id": "currency_conversion_enabled",
-        "label": "Enable currency conversion",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "currency_conversion_round_amounts",
-        "label": "Round converted amounts",
-        "default": true
-      },
-      {
-        "type": "text",
-        "id": "currency_conversion_supported_currencies",
-        "label": "Supported currencies",
-        "info": "List of currencies to display. You must separate each currencies by an empty space, and use the ISO 4217 3-letter code. Example: USD CAD EUR. All the possible values are [listed here](http:\/\/bit.ly\/1C4cZ3w).",
-        "default": "USD CAD EUR GBP"
-      },
-      {
-        "type": "select",
-        "id": "currency_conversion_money_format",
-        "label": "Money format",
-        "options": [
-          {
-            "value": "money_format",
-            "label": "Money ($10)"
-          },
-          {
-            "value": "money_with_currency_format",
-            "label": "Money with currency ($10 USD)"
-          }
-        ],
-        "default": "money_format"
-      }
-    ]
-  },
-  {
     "name": "Animation",
     "settings": [
       {
         "type": "checkbox",
         "id": "show_page_transition",
         "label": "Show page transition",
-        "default": true
+        "default": false
       },
       {
         "type": "checkbox",
@@ -498,12 +454,6 @@
     "name": "Social media",
     "settings": [
       {
-        "type": "image_picker",
-        "id": "share_image",
-        "label": "Share image",
-        "info": "This image is used when you share pages such as home page. For product, collection or article pages, the featured image will be used instead."
-      },
-      {
         "type": "header",
         "content": "Accounts"
       },
@@ -551,6 +501,12 @@
       },
       {
         "type": "text",
+        "id": "social_tiktok",
+        "info": "https:\/\/www.tiktok.com\/shopify",
+        "label": "TikTok"
+      },
+      {
+        "type": "text",
         "id": "social_linkedin",
         "info": "https:\/\/linkedin.com\/in\/shopify",
         "label": "LinkedIn"
@@ -576,7 +532,7 @@
         "type": "image_picker",
         "id": "favicon",
         "label": "Image",
-        "info": "32 x 32px .png recommended"
+        "info": "96 x 96px .png recommended"
       }
     ]
   }

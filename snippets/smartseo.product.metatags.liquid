@@ -9,7 +9,6 @@
 {%- assign shop_seo_metafield_by_tag_and_vendor_namespace = 'tag-vendor' -%}
 {%- assign metafield_parts_separator = '=||=' -%}
 {%- assign template_value_parts_separator = ':||:' -%}
-{%- assign is_langify_enabled = false -%}
 
 {%- assign smartseo_title = page_title -%}
 {%- assign smartseo_description = page_description -%}
@@ -104,65 +103,19 @@
 {%- endif -%}
 
 {%- if active_seo_template != blank -%}
-    {%- if is_langify_enabled -%}
-        {%- comment -%}ly_code_replace_for_[ product.title ]_begin{%- endcomment -%}
-        {%- capture langify_product_title -%}{%- include 'ly-title' with product -%}{{ ly_translation }}{%- endcapture -%}
-        {%- comment -%}ly_code_replace_end{%- endcomment -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${title}', langify_product_title -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${title}', product.title -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${description}', product.description -%}
 
-        {%- comment -%}ly_code_replace_for_[ product.description ]_begin{%- endcomment -%}
-        {%- capture langify_product_description -%}{%- include 'ly-description' with product -%}{{ ly_translation }}{%- endcapture -%}
-        {%- comment -%}ly_code_replace_end{%- endcomment -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${description}', langify_product_description -%}
+    {%- capture product_tags -%}{{ product.tags | join: ', ' }}{%- endcapture -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${tags}', product_tags -%}
 
-        {%- capture product_tags -%}
-            {% assign product_tags_str = product.tags | join: ', ' | append: ',' -%}
-            {%- assign tag_translation_namespace = 'ta' | append: language -%}
-            {%- for tag_translation in shop.metafields[tag_translation_namespace] -%}
-                {%- assign srcToReplace = tag_translation | first -%}
-                {%- assign srcToCheckFor = tag_translation | first | append: ',' -%}
-                {%- assign translated = tag_translation | last -%}
-                {%- if product_tags_str contains srcToCheckFor -%}
-                    {%- assign product_tags_str = product_tags_str | replace: srcToReplace, translated -%}
-                {%- endif -%}
-            {%- endfor -%}{{ product_tags_str }}
-        {%- endcapture -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${tags}', product_tags -%}
-
-        {%- comment -%}ly_code_replace_for_[ product.type ]_begin{%- endcomment -%}
-        {%- capture langify_product_type -%}{%- include 'ly-type' with product -%}{{ ly_translation }}{%- endcapture -%}
-        {%- comment -%}ly_code_replace_end{%- endcomment -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${product-type}', langify_product_type -%}
-
-        {%- comment -%}ly_code_replace_for_[ product.vendor ]_begin{%- endcomment -%}
-        {%- capture langify_product_vendor -%}{%- include 'ly-vendor' with product -%}{{ ly_translation }}{%- endcapture -%}
-        {%- comment -%}ly_code_replace_end{%- endcomment -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${vendor}', langify_product_vendor -%}
-
-        {%- comment -%}ly_code_replace_for_[ product.selected_or_first_available_variant.title ]_begin{%- endcomment -%}
-        {%- capture langify_variant_title -%}{%- include 'ly-title' with product.selected_or_first_available_variant -%}{{ ly_translation }}{%- endcapture -%}
-        {%- comment -%}ly_code_replace_end{%- endcomment -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${variant-title}', langify_variant_title -%}
-
-        {%- assign active_seo_template = active_seo_template | replace: '${default-meta-title}', langify_title -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${default-meta-description}', langify_description -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${shop-name}', langify_shop_name -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${shop-description}', langify_shop_description -%}
-    {%- else -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${title}', product.title -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${description}', product.description -%}
-
-        {%- capture product_tags -%}{{ product.tags | join: ', ' }}{%- endcapture -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${tags}', product_tags -%}
-
-        {%- assign active_seo_template = active_seo_template | replace: '${product-type}', product.type -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${vendor}', product.vendor -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${variant-title}', variant.title -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${default-meta-title}', page_title -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${default-meta-description}', page_description -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${shop-name}', shop.name -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${shop-description}', shop.description -%}
-    {%- endif -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${product-type}', product.type -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${vendor}', product.vendor -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${variant-title}', variant.title -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${default-meta-title}', page_title -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${default-meta-description}', page_description -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${shop-name}', shop.name -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${shop-description}', shop.description -%}
 
     {%- assign active_seo_template = active_seo_template | replace: '${sku}', product.selected_or_first_available_variant.sku -%}
     {%- assign active_seo_template = active_seo_template | replace: '${barcode}', product.selected_or_first_available_variant.barcode -%}
@@ -215,8 +168,8 @@
 {%- endif -%}
 
 <title>{{ smartseo_title }}</title>
-<meta name='description' content='{{ smartseo_description }}' />
-<meta name='smartseo-keyword' content='{{ smartseo_keywords }}' />
-<meta name='smartseo-timestamp' content='{{ active_seo_template_timestamp }}' />
+<meta name="description" content="{{ smartseo_description }}" />
+<meta name="smartseo-keyword" content="{{ smartseo_keywords }}" />
+<meta name="smartseo-timestamp" content="{{ active_seo_template_timestamp }}" />
 
 {%- assign stop_template_processing = true -%}

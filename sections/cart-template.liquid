@@ -15,7 +15,10 @@
 
         {%- if settings.cart_show_free_shipping_threshold -%}
           {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
-          {%- capture remaining_amount -%}<span>{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}</span>{%- endcapture -%}
+          {%- capture remaining_amount -%}
+<span class="saso-cart-original-total"><span>{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}</span></span>
+<span class="saso-cart-total"></span>
+{%- endcapture -%}
 
           <p class="Text--subdued">{{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount -}}</p>
         {%- endif -%}
@@ -36,7 +39,10 @@
               {%- if cart.total_price >= threshold_in_cents -%}
                 {{- 'cart.general.free_shipping' | t -}}
               {%- else -%}
-                {%- capture remaining_amount -%}<span>{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}</span>{%- endcapture -%}
+                {%- capture remaining_amount -%}
+<span class="saso-cart-original-total"><span>{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}</span></span>
+<span class="saso-cart-total"></span>
+{%- endcapture -%}
                 {{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount -}}
               {%- endif -%}
             </p>
@@ -68,7 +74,10 @@
                 {%- endfor -%}
               {%- endif -%}
 
-              <p class="Cart__Total Heading u-h6">{{ 'cart.general.total' | t }}: <span data-money-convertible>{{ cart.total_price | money_without_trailing_zeros }}</span></p>
+              <p class="Cart__Total Heading u-h6">{{ 'cart.general.total' | t }}: 
+<span class="saso-cart-original-total"><span data-money-convertible>{{ cart.total_price | money_without_trailing_zeros }}</span></span>
+<span class="saso-cart-total"></span>
+</p>
 
               {%- if shipping_and_taxes_notice != blank -%}
                 <p class="Cart__Taxes Text--subdued">{{ shipping_and_taxes_notice }}</p>

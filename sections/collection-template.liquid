@@ -21,7 +21,6 @@
 
   {%- if collection.products_count > 0 -%}
     {%- paginate collection.products by section.settings.grid_items_per_page -%}
-    <h1>{{collection.handle}}</h1>
       <div class="ProductListWrapper">
         <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
           {%- for product in collection.products -%}
@@ -106,7 +105,7 @@
           </noscript>
 
           <div class="Container">
-            <div class="SectionHeader SectionHeader--center">
+                       <div class="SectionHeader SectionHeader--center">
               <h1 class="SectionHeader__Heading Heading u-h1">{{ collection.title }}</h1>
 
               {%- if collection.description != blank -%}
@@ -120,8 +119,13 @@
         </div>
       {%- else -%}
         <header class="PageHeader">
-          <div class="Container">
-            <div class="SectionHeader SectionHeader--center">
+          <div class="Container" style="display: flex; justify-content: space-around; background-color: {{ section.settings.desc_bg_color }}; padding: 50px 0; align-items: center;">
+            {% if section.settings.show_desc_img %}
+              <div class="desc_img" style="width: 40%">
+                  <img src="{{ section.settings.desc_img }}" alt="" height="{{ section.settings.desc_img_size }}px;" width="{{ section.settings.desc_img_size }}px";>
+              </div>
+            {% endif %}
+            <div class="SectionHeader SectionHeader--center" style="width: 40%; margin: 0px !important;">
               <h1 class="SectionHeader__Heading Heading u-h1">{{ collection.title }}</h1>
 
               {%- if collection.description != blank -%}
@@ -235,6 +239,7 @@
 
         {%- capture filters_content -%}
           {%- if quick_links != empty -%}
+          <h1>yooooo</h1>
             <div class="Collapsible Collapsible--padded Collapsible--autoExpand">
               <button type="button" class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
                 {{- quick_links.title | escape -}} <span class="Collapsible__Plus"></span>
@@ -482,6 +487,32 @@
       "id": "show_vendor",
       "label": "Show vendor",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_desc_img",
+      "label": "Show description image",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "desc_img",
+      "label": "Image description"
+    },
+    {
+      "type": "range",
+      "id": "desc_img_size",
+      "label": "Taille de l'image de description",
+      "default": 300,
+      "min": 50,
+      "max": 1000,
+      "step" : 25
+    },
+    {
+      "type": "color",
+      "id": "desc_bg_color",
+      "label": "Couleur de l'arrière plan",
+      "default": "#1c1b1b"
     },
     {
       "type": "select",

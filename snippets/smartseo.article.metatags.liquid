@@ -7,7 +7,6 @@
 {%- assign shop_seo_metafield_by_blog_and_tag_namespace = 'blog-tag' -%}
 {%- assign metafield_parts_separator = '=||=' -%}
 {%- assign template_value_parts_separator = ':||:' -%}
-{%- assign is_langify_enabled = false -%}
 
 {%- assign smartseo_title = page_title -%}
 {%- assign smartseo_description = page_description -%}
@@ -76,41 +75,18 @@
 {%- endif -%}
 
 {%- if active_seo_template != blank -%}
-    {%- if is_langify_enabled -%}
-        {%- comment -%}ly_code_replace_for_[ article.title ]_begin{%- endcomment -%}
-        {%- capture langify_article_title -%}{% include 'ly-title' with article %}{{ ly_translation }}{%- endcapture -%}
-        {%- comment -%}ly_code_replace_end{%- endcomment -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${title}', langify_article_title -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${title}', article.title -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${description}', article.excerpt -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${summary}', article.excerpt -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${author}', article.author -%}
 
-        {%- comment -%}ly_code_replace_for_[ article.description ]_begin{%- endcomment -%}
-        {%- capture langify_article_description -%}{% include 'ly-excerpt' with article %}{{ ly_translation }}{%- endcapture -%}
-        {%- comment -%}ly_code_replace_end{%- endcomment -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${description}', langify_article_description -%}
+    {%- capture article_tags -%}{{ article.tags | join: ', ' }}{%- endcapture -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${tags}', article_tags -%}
 
-        {%- comment -%}ly_code_replace_for_[ article.summary ]_begin{%- endcomment -%}
-        {%- capture langify_article_summary -%}{% include 'ly-excerpt' with article %}{{ ly_translation }}{%- endcapture -%}
-        {%- comment -%}ly_code_replace_end{%- endcomment -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${summary}', langify_article_summary -%}
-
-
-        {%- assign active_seo_template = active_seo_template | replace: '${default-meta-title}', langify_title -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${default-meta-description}', langify_description -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${shop-name}', langify_shop_name -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${shop-description}', langify_shop_description -%}
-    {%- else -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${title}', article.title -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${description}', article.excerpt -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${summary}', article.excerpt -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${author}', article.author -%}
-
-        {%- capture article_tags -%}{{ article.tags | join: ', ' }}{%- endcapture -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${tags}', article_tags -%}
-
-        {%- assign active_seo_template = active_seo_template | replace: '${default-meta-title}', page_title -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${default-meta-description}', page_description -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${shop-name}', shop.name -%}
-        {%- assign active_seo_template = active_seo_template | replace: '${shop-description}', shop.description -%}
-    {%- endif -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${default-meta-title}', page_title -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${default-meta-description}', page_description -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${shop-name}', shop.name -%}
+    {%- assign active_seo_template = active_seo_template | replace: '${shop-description}', shop.description -%}
 
     {%- assign template_value_parts = active_seo_template | split: template_value_parts_separator -%}
 
@@ -126,8 +102,8 @@
 {%- endif -%}
 
 <title>{{ smartseo_title }}</title>
-<meta name='description' content='{{ smartseo_description }}' />
-<meta name='smartseo-keyword' content='{{ smartseo_keywords }}' />
-<meta name='smartseo-timestamp' content='{{ active_seo_template_timestamp }}' />
+<meta name="description" content="{{ smartseo_description }}" />
+<meta name="smartseo-keyword" content="{{ smartseo_keywords }}" />
+<meta name="smartseo-timestamp" content="{{ active_seo_template_timestamp }}" />
 
 {%- assign stop_template_processing = true -%}

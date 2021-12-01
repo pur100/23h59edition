@@ -27,21 +27,10 @@
          </style>
     {% elsif tag contains "logo" %}
           <style>
-            .Header__LogoLink .Heading {
-               color: {{ tag | replace: 'logo-', '' }} !important;
-            }
-            .Heading, .Link {
-               color: {{ tag | replace: 'logo-', '' }} !important;
-            }
 
-            .Header__Wrapper svg {
+            .ProductMeta__Title {
                color: {{ tag | replace: 'logo-', '' }} !important;
             }
-
-            .logo_txt h1{
-               color: {{ tag | replace: 'logo-', '' }} !important;
-            }
-
 
           </style>
     {% endif %}
@@ -290,6 +279,11 @@
 
                 {{ product.description | replace: 'data-section-type', 'data-section-type-placeholder' }}
               </div>
+              <br />
+              {%- comment -%}<a id="reviews"></a>
+              <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>{%- endcomment -%}
+              
+<br>
 
               {%- if section.settings.show_share_buttons -%}
                 <div class="ProductMeta__ShareButtons hidden-pocket">

@@ -5,7 +5,7 @@
 
 <meta name="smart-seo-integrated" content="true" />
 
-{%- if template contains 'page' %}
+{%- if template.name contains 'page' %}
     {%- assign stop_processing_templates = true %}
     {%- assign use_default_meta_tags = true %}
 {%- endif -%}

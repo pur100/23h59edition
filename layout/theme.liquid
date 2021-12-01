@@ -2,18 +2,21 @@
 
 <html class="no-js" lang="{{ shop.locale }}">
   <head>
-    <meta name="google-site-verification" content="IV7BPLESttSpBdxSWN1s4zlr4HIcuHkGQYmE3wLG59w" />
+{% include 'limespot' %}{%- comment -%}smartseo_integration_begin{%- endcomment -%}{% include 'smartseo' %}{%- comment -%}smartseo_integration_end{%- endcomment -%}
+
+<meta name="google-site-verification" content="nDKhcM-J75zP_Sm7GExoThxeFpWEwlZNxmRH2R0xweA" />
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="{{ settings.accent_color }}">
 
-    <title>
+    {%- comment smartseo_integration_begin_meta_data -%}<title>
       {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
-    </title>
+    </title>{%- endcomment smartseo_integration_end_meta_data -%}
 
     {%- if page_description -%}
-      <meta name="description" content="{{ page_description | escape }}">
+      {%- comment smartseo_integration_begin_meta_data -%}<meta name="description" content="{{ page_description | escape }}">{%- endcomment smartseo_integration_end_meta_data -%}
     {%- endif -%}
 
     <link rel="canonical" href="{{ canonical_url }}">
@@ -105,28 +108,165 @@
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
 
     {% render 'microdata-schema' %}
-  </head>
 
-  <body class="prestige--v4 {% if template.directory %}template-{{ template.directory | handle }}{% endif %} template-{{ template.name | handle }}">
+    <script type="text/javascript">
+!function(e){if(!window.pintrk){window.pintrk=function()
+{window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+n=window.pintrk;n.queue=[],n.version="3.0";var
+t=document.createElement("script");t.async=!0,t.src=e;var
+r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}
+("https://s.pinimg.com/ct/core.js");
+
+pintrk('load','2613274953683', { em: '{{ customer.email }}', });
+pintrk('page');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt=""
+src="https://ct.pinterest.com/v3/?tid=2613274953683&noscript=1" />
+</noscript>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> 
+  <!-- Hotjar Tracking Code for www.23heures59editions.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2344979,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+  
+  {% render 'shogun-head' %}
+</head>
+  
+  <!-- Start of Async Drift Code -->
+<!-- End of Async Drift Code -->
+<meta name="google-site-verification" content="nDKhcM-J75zP_Sm7GExoThxeFpWEwlZNxmRH2R0xweA" />  <body class="prestige--v4 {% if template.directory %}template-{{ template.directory | handle }}{% endif %} template-{{ template.name | handle }}">
     <a class="PageSkipLink u-visually-hidden" href="#main">{{ 'header.navigation.skip_to_content' | t }}</a>
     <span class="LoadingBar"></span>
     <div class="PageOverlay"></div>
     <div class="PageTransition"></div>
 
-
+    {% section 'popup' %}
+    {% section 'sidebar-menu' %}
 
     {%- if template != 'cart' -%}
       {% render 'cart-drawer' %}
     {%- endif -%}
 
     <div class="PageContainer">
-
+      {% section 'announcement' %}
+      {% section 'header' %}
 
       <main id="main" role="main">
         {{ content_for_layout }}
+<limespot></limespot>
       </main>
 
+      
+      <style>
+        #gd-pre-footer { overflow:hidden; clear:both; margin-top:20px; margin-bottom:0px; padding-bottom:0; }
+        #gd-pre-footer .col-item { padding:15px 25px; text-align:center; list-style:none; }
+        #gd-pre-footer ul { padding-left:0 !important; }
+        #gd-pre-footer center { background:#e1d5ce; }
+        @media screen and (min-width: 768px) {
+          #gd-pre-footer .col-item {
+            width:25%;
+            text-align:center;
+            float:left;
+            padding:20px 15px;
+            background:#e1d5ce 
+          }
+        }
+      </style>
+      <div id="gd-pre-footer" class="pre_footer index-section home-section">
+        <div class="wrapper">
+          <div>
+            <ul class="footer-badges-list">
+              <li class="col-item">
+                <div class="text-center">
+                  <img src="https://cdn.shopify.com/s/files/1/0272/5412/8693/files/1.png?v=1619624257" style="height: 95px;">
+                  <p><h3 class="h4"><strong>Livraison offerte en France</strong></h3>
+                </div>
+                <center>à partir de 80 € d’achat</center>
+              </li>
+              <li class="col-item">
+                <div class="text-center">
+                  <img class="" src="https://cdn.shopify.com/s/files/1/0272/5412/8693/files/4.png?v=1619624257" style="height: 95px;">
+                  <p><h3 class="h4"><strong>Paiement sécurisé</strong></h3>
+                </div>
+                <center>Visa | Mastercard | Amex</center>
+              </li>
+              <li class="col-item">
+                <div class="text-center">
+                  <img class="img90" src="https://cdn.shopify.com/s/files/1/0272/5412/8693/files/2_64d4afc2-9a45-44e5-9326-348b4bea8a99.png?v=1619624271" style="height: 95px;">
+                  <p><h3 class="h4"><strong>Nos Carnets sont fabriqués avec soin</strong></h3>
+                </div>
+                <center>en France et au Portugal</center>
+              </li>
+              <li class="col-item">
+                <div class="text-center">
+                  <img class="img90" src="https://cdn.shopify.com/s/files/1/0272/5412/8693/files/3.png?v=1619624257" style="height: 95px;">
+                  <p><h3 class="h4"><strong>Une question ?</strong></h3>
+                </div>
+                <center>contactez-nous à hello@23heures59editions.com</center>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>   
+      
+      
       {% section 'footer' %}
     </div>
-  </body>
+  
+    <script type='text/javascript' async src='https://spcdn.incartupsell.com/gfiei-jzTALSog41zimnmo1Pid.js'></script>
+  	
+  <script>
+    $(document).ready(function(){
+      
+      let icuCheck = document.getElementById("nudge-offer"); 
+      let inter;
+      console.log(icuCheck);
+      if(icuCheck  == null){
+      	inter = setInterval(CheckApp,2000);
+      }
+      
+      
+      function CheckApp(){
+          icuCheck = document.getElementById("nudge-offer"); 
+          console.log(icuCheck);
+        if(icuCheck  == null){
+        	
+        }else{
+          	clearInterval(inter);
+        	Listen();
+        }
+      }
+      
+      function Listen(){
+
+        let btn = document.getElementsByClassName("product-price");
+        console.log("Here");
+        console.log(btn);
+        for(let i = 0; i < btn.length;i++){
+          btn[i].addEventListener("click",function(e){
+            $("#product-actions").submit();
+
+          })
+        }
+      }
+     
+
+    });  
+  	</script> 
+
+  
+{% include 'swymSnippet' %}
+
+
+{% render 'special-offers' %}
+
+</body>
 </html>

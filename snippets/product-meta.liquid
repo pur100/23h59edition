@@ -19,6 +19,9 @@
       <a href="{{ product.url }}">{{ product.title }}</a>
     {%- endif -%}
   </h1>
+ 
+<span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-title="{{ product.title | escape }}" data-product-type="{{ product.type }}" style="display: block; margin-bottom: -15px;">{{ product.metafields.stamped.badge }}</span>
+ 
 
   {%- if section.settings.show_sku and product.selected_or_first_available_variant.sku != blank -%}
     <p class="ProductMeta__Sku Heading Text--subdued u-h6">{{ 'product.form.sku' | t }}: <span class="ProductMeta__SkuNumber">{{ product.selected_or_first_available_variant.sku }}</span></p>
